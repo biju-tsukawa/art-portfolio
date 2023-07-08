@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Art Portfolio</title>
   <!-- Font Awesome -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -61,6 +62,8 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       transition: transform 0.3s;
+      max-width: 100%;
+      width: auto;
     }
     
     .artwork:hover {
@@ -68,9 +71,14 @@
     }
     
     .artwork img {
-      max-width: 550px;
+      max-width: 600px;
       height: auto;
+      object-fit: cover;
     }
+    .artwork figcaption {
+      max-width: 100%;
+      word-wrap: break-word;
+}
     
     /* Page animations */
     @keyframes fadeIn {
@@ -82,6 +90,16 @@
       animation-fill-mode: both;
       animation-duration: 1s;
       animation-name: fadeIn;
+      .social-media ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+
+.social-media ul li {
+  margin-bottom: 10px;
+  }
+
     }
 	/* Footer */
     .footer {
@@ -91,43 +109,36 @@
       text-align: center;
     }
 	  
-@media only screen and (max-width: auto) {
-  /* Styles for small screens */
+@media screen and (max-width: 767px) {
+  .nav {
+    padding: 20px;
+  }
+
+  .nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+ @media screen and (max-width: 767px) {
+  .parallax-content h2 {
+    font-size: 24px;
+  }
+
+  .section p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+@media only screen (min-width: 768px) and (max-width: 1024px) {
   /* Styles for medium-sized screens */
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen (min-width: 1024px) {
   /* Styles for large screens */
 }
 
-</style>
-<style>
-  /* Parallax Effect */
-  .parallax-section {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    height: 100vh;
-  }
-  
-  .parallax-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    color: #fff;
-    text-align: center;
-  }
-  
-  .parallax-content h2 {
-    font-size: 48px;
-    margin-bottom: 20px;
-  }
 </style>
 
 <div class="parallax-section" style="background-image: url('https://drive.google.com/uc?export=view&id=1l1-uT-SAPseMvepiTDHu49gVxJkoEY4h');">
@@ -167,6 +178,32 @@
       animateElements();
     });
   </script>
+	<style>
+  /* Parallax Effect */
+  .parallax-section {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  
+  .parallax-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .parallax-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+</style>
+
 </head>
 <body>
   <div class="nav">
